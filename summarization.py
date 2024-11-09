@@ -6,8 +6,7 @@ from concurrent.futures import ThreadPoolExecutor
 #from datetime import datetime
 #start_time = datetime.now()
 
-uri = "mongodb+srv://nitesh8527:Nitesh8527@cluster0.bxxtr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-client = pymongo.MongoClient(secrets.MONODB_URL)
+client = pymongo.MongoClient(secrets.MONGODB_URL)
 db = client.pdf_db
 print(db)
 db.client['pdf_db'] 
