@@ -8,15 +8,6 @@ with open("stop_word_obj.pkl","rb") as f:
 with open("domain_keywords_obj.pkl","rb") as f:
     domain_keywords = pickle.load(f)
 
-#with open("pickle_obj","rb") as f:
-#    data = pickle.load(f)
-
-
-"""data_list = []
-for i in data:
-    for key, value in i.items():
-        data_list.append((key,value))"""
-
 def keyword_Extraction(data_list:list):
     try:
         extracted_Keywords = []
