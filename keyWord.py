@@ -1,12 +1,21 @@
 import nltk
 from collections import Counter
 import pickle
-
-with open("stop_word_obj.pkl","rb") as f:
+from pathlib import Path
+with open(Path("./stop_word_obj.pkl"),"rb") as f:
     stop_words = pickle.load(f)
 
-with open("domain_keywords_obj.pkl","rb") as f:
+with open(Path("./domain_keywords_obj.pkl"),"rb") as f:
     domain_keywords = pickle.load(f)
+
+#with open("pickle_obj","rb") as f:
+#    data = pickle.load(f)
+
+
+"""data_list = []
+for i in data:
+    for key, value in i.items():
+        data_list.append((key,value))"""
 
 def keyword_Extraction(data_list:list):
     try:
@@ -22,9 +31,9 @@ def keyword_Extraction(data_list:list):
             freq_word = Counter(common)
             extracted_Keywords.append([(sentances[0] ,[i[0] for i in freq_word.most_common(10)])])
             
-        pickle.dump(extracted_Keywords, open("./extracted_keywords.pkl",'wb'))
+        pickle.dump(extracted_Keywords, open(Path("./extracted_keywords.pkl"),'wb'))
         
-        return "./extracted_keywords.pk"
+        return Path("./extracted_keywords.pk")
     except Exception as e:
         raise e
     
