@@ -24,7 +24,7 @@ def frontend():
                 print(dir)
                 args = ["python", "main.py", "-folder", dir]
                 result = subprocess.run(args, capture_output=True, text=True)
-                print(result)
+                st.write(result)
                 st.success("summary and keyword extracted and uploaded to mongodb sucessfully  ✅")
 
 
