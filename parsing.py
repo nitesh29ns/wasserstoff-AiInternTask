@@ -3,13 +3,15 @@ import os, pickle, requests, re
 import pymongo
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
+from pathlib import Path
 #start_time = datetime.now()
 
 # funcation for uploading data to monogodb
 def upload_to_mongodb(file_path:str,pdf:pymupdf.Document):
     try:
         # connect with the mongodb
-        client = pymongo.MongoClient(secrets.MONGODB_URL)
+        uri =  "mongodb+srv://nitesh8527:Nitesh8527@cluster0.bxxtr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+        client = pymongo.MongoClient(uri)
         db = client.pdf_db
         db.client['pdf_db'] 
         coll = db['pdf_collection']
@@ -105,7 +107,7 @@ def ThreadProcess(pdf_files:list):
         with open("./parse_data.pkl", 'wb') as fp:
             pickle.dump(l, fp)
 
-        return "./parse_data.pkl"
+        return Path("./parse_data.pkl")
             
     except Exception as e:
         raise e
