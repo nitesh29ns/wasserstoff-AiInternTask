@@ -10,7 +10,7 @@ from pathlib import Path
 def upload_to_mongodb(file_path:str,pdf:pymupdf.Document):
     try:
         # connect with the mongodb
-        uri =  "mongodb+srv://nitesh8527:Nitesh8527@cluster0.bxxtr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+        url =  "mongodb+srv://nitesh8527:Nitesh8527@cluster0.bxxtr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
         client = pymongo.MongoClient(url)
         db = client.pdf_db
         db.client['pdf_db'] 
