@@ -9,8 +9,7 @@ from datetime import datetime
 def upload_to_mongodb(file_path:str,pdf:pymupdf.Document):
     try:
         # connect with the mongodb
-        uri = secrets.MONODB_URL "mongodb+srv://nitesh8527:Nitesh8527@cluster0.bxxtr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-        client = pymongo.MongoClient(uri)
+        client = pymongo.MongoClient(secrets.MONGODB_URL)
         db = client.pdf_db
         db.client['pdf_db'] 
         coll = db['pdf_collection']
