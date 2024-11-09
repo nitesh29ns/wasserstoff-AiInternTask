@@ -6,6 +6,8 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 #from datetime import datetime
 #start_time = datetime.now()
+nltk.download("punkt")
+nltk.download("wordnet")
 
 url = "mongodb+srv://nitesh8527:Nitesh8527@cluster0.bxxtr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 client = pymongo.MongoClient(url) # secrets.MONODB_URL
