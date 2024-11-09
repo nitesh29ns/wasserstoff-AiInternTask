@@ -3,10 +3,12 @@ from nltk.stem import WordNetLemmatizer
 import pickle, os
 import pymongo
 from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
 #from datetime import datetime
 #start_time = datetime.now()
 
-client = pymongo.MongoClient(secrets.MONGODB_URL)
+uri = "mongodb+srv://nitesh8527:Nitesh8527@cluster0.bxxtr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+client = pymongo.MongoClient(uri) # secrets.MONODB_URL
 db = client.pdf_db
 print(db)
 db.client['pdf_db'] 
@@ -61,10 +63,10 @@ def summerizing(sentences:str,stop_words:list,domain_keywords:list, length:int):
     except Exception as e:
         raise e
 
-with open("stop_word_obj.pkl","rb") as f:
+with open(Path("./stop_word_obj.pkl"),"rb") as f:
     stop_words = pickle.load(f)
 
-with open("domain_keywords_obj.pkl","rb") as f:
+with open(Path("./domain_keywords_obj.pkl"),"rb") as f:
     domain_keywords = pickle.load(f)
 
 #with open("parse_data.pkl","rb") as f:
@@ -101,7 +103,7 @@ def start_summarizing(data_list:list):
             with open("./summary_obj.pkl", 'wb') as f:
                 pickle.dump(l,f)
 
-        return "./summary_obj.pkl"
+        return Path("./summary_obj.pkl")
     except Exception as e:
         raise e
 
