@@ -1,6 +1,7 @@
 import streamlit as st
 import os
 import subprocess
+from pathlib import Path
 
 
 def frontend():
@@ -8,7 +9,7 @@ def frontend():
     st.set_page_config()
     folder = st.file_uploader("upload PDF file",accept_multiple_files=True)
     if folder:
-        dir = "./uploaded_pdfs"
+        dir = Path("./uploaded_pdfs")
         os.makedirs(dir,exist_ok=True)
         for i in folder:
             print(i.name)
