@@ -13,7 +13,6 @@ def updateMongodb(summary:str):
 
 
         # connect with the mongodb
-        uri = "mongodb+srv://nitesh8527:Nitesh8527@cluster0.bxxtr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
         client = pymongo.MongoClient(secrets.MONODB_URL)
         db = client.pdf_db
         db.client['pdf_db'] 
