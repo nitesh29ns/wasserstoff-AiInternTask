@@ -1,7 +1,6 @@
 pymongo
 #jupyter #dev
-#pymongo[srv]
-#pypdf #not using
+pymongo[srv]
 PyMuPDF
 nltk
 spacy
