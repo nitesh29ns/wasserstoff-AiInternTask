@@ -9,7 +9,7 @@ from pymongo.server_api import ServerApi
 #start_time = datetime.now()
 
 uri = "mongodb+srv://nitesh8527:Nitesh8527@cluster0.bxxtr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-client = pymongo.MongoClient(uri, server_api=ServerApi('1'), tls=True) # secrets.MONODB_URL
+client = pymongo.MongoClient(url, server_api=ServerApi('1'), tls=True) # secrets.MONODB_URL
 db = client.pdf_db
 print(db)
 db.client['pdf_db'] 
