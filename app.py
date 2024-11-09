@@ -21,10 +21,8 @@ def frontend():
 
         if st.button("start pipeline."):
             with st.spinner("summarizing and extracting keywords.."):
-                print(dir)
                 args = ["python", "main.py", "-folder", dir]
                 result = subprocess.run(args, capture_output=True, text=True)
-                st.write(result)
                 st.success("summary and keyword extracted and uploaded to mongodb sucessfully  ✅")
 
 
