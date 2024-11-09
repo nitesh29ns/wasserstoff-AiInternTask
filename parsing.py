@@ -4,6 +4,7 @@ import pymongo
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 from pathlib import Path
+from pymongo.server_api import ServerApi
 #start_time = datetime.now()
 
 # funcation for uploading data to monogodb
@@ -11,7 +12,7 @@ def upload_to_mongodb(file_path:str,pdf:pymupdf.Document):
     try:
         # connect with the mongodb
         uri =  "mongodb+srv://nitesh8527:Nitesh8527@cluster0.bxxtr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-        client = pymongo.MongoClient(uri)
+        client = pymongo.MongoClient(uri server_api=ServerApi('1'), tls=True)
         db = client.pdf_db
         db.client['pdf_db'] 
         coll = db['pdf_collection']
