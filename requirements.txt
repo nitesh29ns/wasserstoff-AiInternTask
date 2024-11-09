@@ -1,0 +1,8 @@
+pymongo
+#jupyter #dev
+#pymongo[srv]
+#pypdf #not using
+PyMuPDF
+nltk
+spacy
+scikit-learn
