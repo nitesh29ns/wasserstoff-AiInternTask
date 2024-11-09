@@ -6,3 +6,4 @@ PyMuPDF
 nltk
 spacy
 scikit-learn
+streamlit
