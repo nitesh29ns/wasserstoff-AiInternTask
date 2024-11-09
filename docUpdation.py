@@ -1,5 +1,6 @@
 import pymongo
 import pickle
+from pathlib import Path
 
 #summaries = pickle.load(open("summary_obj.pkl", "rb"))
 
@@ -9,11 +10,12 @@ def updateMongodb(summary:str):
     try:
         summaries = pickle.load(open(summary, "rb"))
 
-        keywords = pickle.load(open("./extracted_keywords.pkl", "rb"))
+        keywords = pickle.load(open(Path("./extracted_keywords.pkl"), "rb"))
 
 
         # connect with the mongodb
-        client = pymongo.MongoClient(secrets.MONODB_URL)
+        url = "mongodb+srv://nitesh8527:Nitesh8527@cluster0.bxxtr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+        client = pymongo.MongoClient(url) #  secrets.MONODB_URL
         db = client.pdf_db
         db.client['pdf_db'] 
         coll = db['pdf_collection']
